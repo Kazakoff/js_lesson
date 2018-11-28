@@ -1,0 +1,25 @@
+function createCounter(initial) {
+    var counter = initial;
+    function increment(value) {
+        if (!isFinite(value) || value < 1){
+          value = 1;
+        }
+        counter += value;
+      }
+    function get() {
+        return counter;
+      }
+    return {
+        increment: increment,
+        get: get
+      };
+    }
+
+var myCounter = createCounter(100);
+console.log(myCounter.get());   
+myCounter.increment(5);
+console.log(myCounter.get());  
+
+var myCounter1 = createCounter(100); 
+var myCounter2 = createCounter(200);
+
